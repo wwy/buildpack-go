@@ -1,11 +1,5 @@
 # Cloudfoundry Buildpack: Go
 
-This is an experimental [Cloudfoundry buildpack][cloudfoundry-buildpack] for [Go][go].
-
-It is heavily based on existing [Heroku Buildpack][heroku-buildpack] created by Keith Rarick. However it had to be modified to accomodate to the fact that the current CF v2 stack does not come with installed Python header files. Therefore Mercurial, as well as Bazaar, needs to be installed as a pure Python libs, i.e. without native C bindings.
-
-In order to speed things up a bit the [compile][compile] script caches Go binaries as well as the Mercurial and Bazaar sources.
-
 Besides the actual source code, the following files must be present in the root folder of your application:
 * .godir - contains the desired name of the final binary
 * Procfile - specifies the type of the application and the actual command executed when the instance is started
@@ -49,5 +43,4 @@ Server: XMS (724Solutions HTA XMP_40_M2_B083 20091027.165340)
 
 [go]: http://golang.org/
 [cloudfoundry-buildpack]: http://docs.cloudfoundry.com/docs/using/deploying-apps/buildpacks.html
-[heroku-buildpack]: https://github.com/kr/heroku-buildpack-go.git
 [compile]: https://github.com/michaljemala/cloudfoundry-buildpack-go/blob/master/bin/compile
